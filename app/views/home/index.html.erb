@@ -1,0 +1,21 @@
+
+<h3>signed in as <%= current_user.email %></h3>
+<br>
+<br>
+<br>
+
+<h5>My Favorite Organizations</h5>
+<% @favorites.each do |favorite| %>
+    <ul>
+      <li><%= favorite.name %></li>
+    </ul>
+<% end %>
+
+
+<h5>All Organizations</h5>
+<% @organizations.each do |organization| %>
+    <ul>
+      <li><%= link_to organization.name, organization %></li>
+    </ul>
+<% end %>
+

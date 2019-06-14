@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+<br>
+<%= check_favorite(@organization.id) %>
+<br>
+<br>
+<h3>List of Users who favorited it</h3>
+<% @users.each do |user| %>
+    <ul>
+      <li><%= user.email %></li>
+    </ul>
+<% end %>
+
+<%= link_to 'Back', root_path %>
+<br>

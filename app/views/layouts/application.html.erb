@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="well">
+    <% if user_signed_in? %>
+        <li>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+    <% else %>
+        <li>
+          <%= link_to('Login', new_user_session_path) %>
+        </li>
+    <% end %>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>
